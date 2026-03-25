@@ -8,20 +8,15 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
-
 // routes
 app.use("/api/products", productRoute);
-
-
-
 
 app.get("/", (req, res) => {
   res.send("Hello from Node API Server Updated");
 });
 
-
 mongoose
-  .connect(
+.connect(
     "mongodb+srv://shubhanjali32_db_user:wFUthzmZY7J6tvxc@cluster0.bubv2jq.mongodb.net/?appName=Cluster0"
   )
   .then(() => {
